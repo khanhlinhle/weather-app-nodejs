@@ -1,0 +1,44 @@
+<nav class="navbar navbar-expand-lg">
+    <a class="navbar-brand" href="#">
+        <img class="dota-img" src="https://pbs.twimg.com/profile_images/1148484652358746112/UdJALHjZ_400x400.png" />
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Home</a>
+            </li>
+        </ul>
+        <form action="/" method="GET">
+            <input name="city" placeholder="Enter a city name" required>
+            <input type="submit" value="Get Forecast">
+        </form>
+    </div>
+</nav>
+<div class="container">
+    <h1 class="text-center">Check runes at {{city}}</h1>
+    {{#if forecast}}
+    <h3 class="text-center">
+        {{!-- <img src="http://openweathermap.org/img/wn/{{forecast.weather.0.icon}}@2x.png" /> --}}
+        <span>{{forecast.temp}}°C - {{forecast.weather.0.description}} </span>
+    </h3>
+    {{/if}}
+    <div class="d-flex weather-by-hour">
+        <div class="d-block">
+            <div>Hour:</div>
+            <div>Temperature:</div>
+        </div>
+        {{#if weatherByHour}}
+        {{#each weatherByHour}}
+        <div class="d-block">
+            <div class="text-center">{{dt}}</div>
+            <div><strong>{{temp}}°C</strong></div>
+        </div>
+        {{/each}}
+        {{/if}}
+    </div>
+</div>

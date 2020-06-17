@@ -1,0 +1,40 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-image: url("https://www.itl.cat/pngfile/big/130-1301025_the-bounty-rune-dota-2-runes-hd.jpg");
+}
+
+.nav-link {
+  color: lightpink;
+}
+
+.navbar {
+  background-image: inherit;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.dota-img {
+  width: 50px;
+  height: 50px;
+}
+
+h1 {
+  text-transform: uppercase;
+  font-weight: lighter;
+  color: darkmagenta !important;
+}
+
+h3 {
+  text-transform: capitalize;
+  color: black !important;
+  font-weight: bold;
+}
+
+.container {
+  color: white;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.weather-by-hour {
+  justify-content: space-around;
+}
