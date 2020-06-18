@@ -22,7 +22,7 @@ router.get('/', async function (req, res, next) {
       }
     });
     console.log(forecast.hourly.length);
-    
+
     forecast.hourly.dt = forecast.hourly.map(item => {
       eachHour = new Date(item.dt * 1000);
       item.dt = eachHour.getHours();
@@ -39,6 +39,19 @@ router.get('/', async function (req, res, next) {
     next(err);
   }
 
+});
+
+router.get("/weather-by-coords", async (req, res, next) => {
+  try {
+    const { lon, lat } = req.query;
+    if (!lon || !lat) {
+      return res.json({ status: "Failed", message: "Requires longitude and latitude" });
+    }
+    const forecast = await getForecast([lon, lat]);
+    return res.json({ status: "Okay", data: forecast.current });
+  } catch (err) {
+      next(err);
+  }
 });
 
 module.exports = router;
